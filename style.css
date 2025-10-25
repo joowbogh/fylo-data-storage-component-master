@@ -40,20 +40,19 @@ main{
 }
 .content{
   background: hsl(228, 56%, 26%);
-  width: 350px;
+  width: 500px;
   border-radius: 8px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
-  padding: 30px;
+  padding: 30px 15px;
   margin-left: 20px;
   position: relative;
 }
 p{
   color: hsl(229, 7%, 55%);
-  text-align: start;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 400;
 }
 p span{
@@ -68,8 +67,97 @@ p span{
   right: 30px;
   top: -60px;
   padding: 5px 10px;
-  border-radius: 10px 10px 0px 10px;
+  border-radius: 10px 10px 0;
   font-size: 30px;
   text-align: center;
   color: hsl(229, 57%, 11%);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.content > span b{
+  font-size: 30px;
+  margin-right: 5px;
+}
+.content>span::after{
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 20px solid hsl(243, 100%, 93%);
+  position: absolute;
+  bottom: -20px;
+  right: 0px;
+}
+
+.dwnlod{
+  width: 100%;
+  height: 15px;
+  border: 1px solid hsl(229, 57%, 11%);
+  background-color: hsl(229, 57%, 11%);
+  border-radius: 10px;
+  margin: 0 5px;
+}
+.loading{
+  width: 70%;
+  height: 100%;
+  background-image: linear-gradient(to right,hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+  border-radius: 10px;
+}
+.loading::after{
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 61px;
+  right: 30%;
+}
+.title{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+h3{
+  color: hsl(243, 100%, 93%);
+}
+@media (max-width: 375px){
+  main{
+    background: url('./images/bg-mobile.png');
+    display: flex;
+    flex-direction: column;
+  }
+  .logo, .content{
+    width: 90%;
+    margin: 10px 0;
+  }
+  .content{
+    height: 200px;
+    align-items: center;
+    padding: 0px 10px 20px;
+    margin: 0 5px 10px;
+  }
+  .content > span{
+    width: 150px;
+    height: 60px;
+    position: absolute;
+    right: 105px;
+    top: 128px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .content > span::after{
+    display: none;
+  }
+  .loading::after{
+    top: 83px;
+    right: 31%;
+  }
 }

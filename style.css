@@ -128,7 +128,7 @@ p span{
 h3{
   color: hsl(243, 100%, 93%);
 }
-@media (max-width: 375px){
+@media (max-width: 800px){
   main{
     background: url('./images/bg-mobile.png');
     display: flex;
